@@ -1,0 +1,13 @@
+#include"manh"
+#include<unistd.h>
+/**
+*_putcharwritesthecharacterctostdout
+*@c:Thecharactertoprint
+*
+*Return:Onsuccess1.
+*Onerror,-1isreturned,anderrnoissetapproprately.
+*/
+intputchar(charc)
+{
+return(write(1,&c,1));
+}
