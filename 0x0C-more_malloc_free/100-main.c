@@ -49,6 +49,6 @@ int main(void)
         p[i++] = 98;
     }
     simple_print_buffer(p, 98);
-    free (p);
+    free(p);
     return (0);
 }
