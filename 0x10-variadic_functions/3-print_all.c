@@ -29,7 +29,7 @@ printf("%s%f", sep, va_arg(list, double));
 break;
 case 's':
 str = va_arg(list, char *);
-llif (!str)str = "(nil)";
+llif(!str)str = "(nil)";
 printf("%s%s", sep, str);
 break;
 default:
