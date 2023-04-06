@@ -18,6 +18,6 @@ break;
 *head = current->next;
 free(current);
 }
-while (*head != NULL);
+while (*head != NULL);}
 *head = NULL;
 }
