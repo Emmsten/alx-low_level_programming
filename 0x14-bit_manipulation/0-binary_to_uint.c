@@ -4,13 +4,17 @@
 #include "main.h"
 
 /**
-* Function to convert a binary string to an unsigned integer
-* Returns: 0 if the string is invalid or NULL
-* Initialize the result variable
+* Write a function that converts a binary number to an unsigned int.
+* define unsigned int binary_to_uint(const char *b);
+* where b is pointing to a string of 0 and 1 chars
+* there is one or more chars in the string b that is not 0 or 1
+* b is NULL
+* Return: the converted number, or 0 if
 */
 unsigned int binary_to_uint(const char *b)
 {
-if (b == NULL) return 0;
+if (b == NULL)
+return (0);
 unsigned int result = 0;
 for (int i = 0; b[i] != '\0'; i++)
 {
@@ -25,8 +29,8 @@ result |= 1;
 }
 else
 {
-return 0;
+return (0);
 }
 }
-return result;
+return (result);
 }
