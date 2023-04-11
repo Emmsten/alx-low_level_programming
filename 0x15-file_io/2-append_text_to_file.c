@@ -13,24 +13,25 @@
 */
 int append_text_to_file(const char *filename, char *text_content)
 {
-if (filename == NULL)
+int o, w;
+size_t len = 0;
+if (filename == 0)
+return (-1);
+if (text_content != 0)
 {
+while (text_content[len])
+len++;
+}
+o = open(filename, O_WRONLY | O_APPEND);
+if (o == -1)
+return (-1);
+w = write(o, text_content, len);
+if (w == -1)
+{
+close(o);
 return (-1);
 }
-if (text_content == NULL)
-{
-return (1);
-}
-FILE *file = fopen(filename, "a");
-if (file == NULL)
-{
+if (close(o) == -1)
 return (-1);
-}
-int result = fputs(text_content, file);
-fclose(file);
-if (result == EOF)
-{
-return (-1);
-}
 return (1);
 }
