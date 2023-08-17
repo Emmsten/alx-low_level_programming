@@ -1,20 +1,18 @@
 #include "lists.h"
 
 /**
- * get_dnodeint_at_index - get the nth node of a `dlistint_t` doubly LL
- * @head: pointer to head of LL
- * @index: node index to return
- * Return: node at index given or NULL if node does not exist
+ * free_dlistint - Frees a dlistint list
+ * @head: A pointer to the head node of the list
  */
-dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
+void free_dlistint(dlistint_t *head)
 {
-	dlistint_t *tmp = head;
+	dlistint_t *current = head;
+	dlistint_t *next;
 
-	while (index > 0 && tmp)
+	while (current != NULL)
 	{
-		tmp = tmp->next;
-		index--;
+		next = current->next;
+		free(current);
+		current = next;
 	}
-
-	return (tmp);
 }
